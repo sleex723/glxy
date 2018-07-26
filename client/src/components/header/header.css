@@ -1,0 +1,40 @@
+.Header {
+  height: 100vh;
+}
+
+.Header .BgVideo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.Header .BgVideoContent {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Header .BannerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+}
+
+.Header h1 {
+  font-size: 8rem;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+.Header h2 {
+  font-size: 4rem;
+}
+
+.Header p {
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
