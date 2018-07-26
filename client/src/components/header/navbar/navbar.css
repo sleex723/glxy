@@ -5,8 +5,8 @@
 
 .Navigation {
   background-image: none !important;
-  background-color: transparent !important;
-  border-color: transparent;
+  background-color: #000 !important;
+  border-color: #000;
 }
 
 .Navigation .NavBrand {
