@@ -1,0 +1,52 @@
+.Service {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.Service .CardContainer {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+
+.Service .CardContainer:hover .Card,
+.CardContainer.hover .Card {
+  transform: rotateY(180deg);
+}
+
+.Service .CardContainer,
+.CardFront,
+.CardBack {
+  width: 25rem;
+  height: 40rem;
+}
+
+.Card {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.CardFront,
+.CardBack {
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0 1.5rem 4rem;
+}
+
+.CardFront {
+  background-color: red;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.CardBack {
+  background-color: green;
+  transform: rotateY(180deg);
+}
