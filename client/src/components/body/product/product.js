@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './product.css';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+import Lightbox from 'react-images'
 import img_1 from '../../../img/img_1.jpg'
 import img_2 from '../../../img/img_2.jpg'
 import img_3 from '../../../img/img_3.jpg'
@@ -13,6 +12,7 @@ import img_8 from '../../../img/img_8.jpg'
 import img_9 from '../../../img/img_9.jpg'
 
 import Light from './lightbox/lightbox';
+
 
 const images = [
   img_1,
@@ -28,19 +28,48 @@ const images = [
 
 class Product extends Component {
   state = {
-    photoIndex: 0,
-    isOpen: false
+    currentImage: 0,
+    lightboxIsOpen: false
   }
 
-  openLightBox(index) {
+  openLightbox(index, event) {
+    console.log(index)
+    event.preventDefault();
     this.setState({
-      isOpen: true,
-      photoIndex: index
+      lightboxIsOpen: true,
+      currentImage: index
     })
   }
 
+  closeLightbox () {
+		this.setState({
+			currentImage: 0,
+			lightboxIsOpen: false,
+		});
+	}
+	gotoPrevious () {
+		this.setState({
+			currentImage: this.state.currentImage - 1,
+		});
+	}
+	gotoNext () {
+		this.setState({
+			currentImage: this.state.currentImage + 1,
+		});
+	}
+	gotoImage (index) {
+		this.setState({
+			currentImage: index,
+		});
+	}
+	handleClickImage () {
+		if (this.state.currentImage === images.length - 1) return;
+
+		this.gotoNext();
+	}
+
   render() {
-    const { photoIndex, isOpen } = this.state;
+    const { currentImage, lightboxIsOpen } = this.state;
 
     return(
       <div className={styles.Product}>
@@ -49,27 +78,32 @@ class Product extends Component {
           <h4>An online marketplace that leverages latest technology that can be easily integrated by mobile apps</h4>
           <div className={styles.Products}>
             {images.map((image, idx) => {
-              return <img key={idx} onClick={() => this.openLightBox(idx)} className={styles.ProductImg} src={image} />
+              return <img key={idx} onClick={(e) => this.openLightbox(idx, e)} className={styles.ProductImg} src={image} />
             })}
+
+            <Lightbox
+              images={[
+                { src: img_1},
+                { src: img_2},
+                { src: img_3},
+                { src: img_4},
+                { src: img_5},
+                { src: img_6},
+                { src: img_7},
+                { src: img_8},
+                { src: img_9}
+              ]}
+              currentImage={this.state.currentImage}
+              isOpen={this.state.lightboxIsOpen}
+              onClickImage={this.handleClickImage.bind(this)}
+              onClickNext={this.gotoNext.bind(this)}
+              onClickPrev={this.gotoPrevious.bind(this)}
+              onClickThumbnail={this.gotoImage.bind(this)}
+              onClose={this.closeLightbox.bind(this)}
+            />
 
           </div>
         </div>
-        {/* {isOpen && (
-              <Lightbox
-                mainSrc={images[photoIndex]}
-                nextSrc={images[(photoIndex + 1) % images.length]}
-                prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                onCloseRequest={() => this.setState({ isOpen: false })}
-                onMovePrevRequest={() =>
-                  this.setState({
-                    photoIndex: (photoIndex + images.length - 1) % images.length
-                  })}
-                onMoveNextRequest={() =>
-                  this.setState({
-                    photoIndex: (photoIndex + 1) % images.length
-                  })}
-              />
-            )} */}
       </div>
     )
   }
