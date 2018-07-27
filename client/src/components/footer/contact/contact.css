@@ -1,0 +1,39 @@
+.Contact {
+  margin-left: 5rem;
+}
+
+.Contact .Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.Contact input {
+  width: 35rem;
+  height: 5rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  /* margin-right: 2rem; */
+}
+
+.Contact textarea {
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.Contact button {
+  margin-top: 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 1rem 3rem;
+  height: 4rem;
+  transition: all 0.2s;
+}
+
+.Contact button:hover {
+  background-color: darkgray;
+}

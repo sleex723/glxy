@@ -72,7 +72,7 @@ class Product extends Component {
     return(
       <div className={styles.Product}>
         <div className={styles.ProductContainer}>
-          <h1>Product</h1>
+          <h1>PRODUCTS</h1>
           <h4>An online marketplace that leverages latest technology that can be easily integrated by mobile apps</h4>
           <div className={styles.Products}>
             {images.map((image, idx) => {

@@ -13,7 +13,7 @@ const Header = () => {
         </video>
       </div>
       <div className={styles.BannerContent}>
-        <h1>F&L GALAXY</h1>
+        <h1>GALAXY</h1>
         <h2>NOW OR NEVER</h2>
         <p>GAMING TECHNOLOGY</p>
       </div>

@@ -1,0 +1,19 @@
+.Footer {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Footer h1 {
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+.Footer .FooterContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
