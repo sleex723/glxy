@@ -11,8 +11,6 @@ import img_7 from '../../../img/img_7.jpg'
 import img_8 from '../../../img/img_8.jpg'
 import img_9 from '../../../img/img_9.jpg'
 
-import Light from './lightbox/lightbox';
-
 
 const images = [
   img_1,
@@ -78,7 +76,11 @@ class Product extends Component {
           <h4>An online marketplace that leverages latest technology that can be easily integrated by mobile apps</h4>
           <div className={styles.Products}>
             {images.map((image, idx) => {
-              return <img key={idx} onClick={(e) => this.openLightbox(idx, e)} className={styles.ProductImg} src={image} />
+              return(
+                <div className={styles.Frame}>
+                  <img key={idx} onClick={(e) => this.openLightbox(idx, e)} className={styles.ProductImg} src={image} />
+                </div>
+              )
             })}
 
             <Lightbox

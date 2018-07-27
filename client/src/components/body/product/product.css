@@ -31,6 +31,15 @@
   width: 90%;
 }
 
+.Product .Frame {
+  width: 350px;
+  height: 273px;
+  box-shadow: 0 1rem 3rem;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px;
+}
+
 .Product .ProductImg {
   width: 350px;
   height: 273px;
@@ -38,4 +47,12 @@
   border-radius: 10px;
   margin-bottom: 2rem;
   box-shadow: 0 1rem 3rem;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.Product .ProductImg:hover {
+  transform: scale(1.2);
 }
