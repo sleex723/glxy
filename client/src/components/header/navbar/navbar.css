@@ -7,10 +7,15 @@
   background-image: none !important;
   background-color: #000 !important;
   border-color: #000;
+  color: #fff !important;
 }
 
 .Navigation .NavBrand {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.Navigation .NavLinks {
+  color: #fff !important;
 }

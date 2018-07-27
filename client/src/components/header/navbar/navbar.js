@@ -13,8 +13,8 @@ const Navigation = () => {
         <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
-        <Nav pullRight>
-          <NavItem eventKey={1} href="about">About</NavItem>
+        <Nav pullRight >
+          <NavItem style={{color: 'white'}} eventKey={1} href="about">About</NavItem>
           <NavItem eventKey={2} href="product">Product</NavItem>
           <NavItem eventKey={3} href="services">Services</NavItem>
           <NavItem eventKey={4} href="contact">Contact</NavItem>
